@@ -2,6 +2,6 @@
 
 // polyfills and vendors
 
-if (!window._babelPolyfill) {
+if (!window.babelPolyfill) {
   require('babel-polyfill');
 }
