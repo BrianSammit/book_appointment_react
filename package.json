@@ -47,9 +47,7 @@
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
-    "eslint": "^4.2.0",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-react": "^7.1.0",
     "express": "4.17.1",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
@@ -73,11 +71,25 @@
     "webpack-merge": "4.2.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/eslint-parser": "^7.15.4",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7"
   }
 }
