@@ -1,4 +1,4 @@
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/prefer-stateless-function, react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import axios from 'axios';
 import Login from './auth/LogIn';
@@ -20,7 +20,7 @@ export default class Home extends Component {
   handleLogoutClick() {
     axios
       .delete('http://localhost:3001/logout', { withCredentials: true })
-      .then((response) => this.props.handleLogout())
+      .then(() => this.props.handleLogout())
       .catch((error) => {
         console.log('logout error', error);
       });
@@ -42,4 +42,4 @@ export default class Home extends Component {
   }
 }
 
-/* eslint-enable react/prefer-stateless-function */
+/* eslint-enable react/prefer-stateless-function, react/jsx-props-no-spreading */

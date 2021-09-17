@@ -1,4 +1,5 @@
-/* eslint-disable react/no-unused-state, class-methods-use-this, no-console */
+/* eslint-disable react/no-unused-state, class-methods-use-this, no-console,
+ react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -87,4 +88,5 @@ export default class Login extends Component {
   }
 }
 
-/* eslint-enable react/no-unused-state, class-methods-use-this, no-console */
+/* eslint-enable react/no-unused-state, class-methods-use-this, no-console,
+react/jsx-props-no-spreading */

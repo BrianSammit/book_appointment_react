@@ -1,4 +1,4 @@
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/prefer-stateless-function, react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
@@ -87,4 +87,4 @@ export default class App extends Component {
   }
 }
 
-/* eslint-enable react/prefer-stateless-function */
+/* eslint-enable react/prefer-stateless-function, react/jsx-props-no-spreading */
