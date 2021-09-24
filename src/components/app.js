@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Dashboard from './Dashboard';
 import Home from './Home';
+import Navbar from './Navbar';
 
 export default class App extends Component {
   constructor() {
@@ -60,6 +61,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <BrowserRouter>
+          <Navbar />
           <Switch>
             <Route
               exact

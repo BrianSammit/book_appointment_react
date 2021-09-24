@@ -30,14 +30,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home">
-        <nav className="nav-bar">
-          <img className="logo" />
-          <h1>
-            Status:
-            {this.props.loggedInStatus}
-          </h1>
-          <button onClick={() => this.handleLogoutClick()}>Logout</button>
-        </nav>
+        <button onClick={() => this.handleLogoutClick()}>Logout</button>
         <div>
           <Registration handleSuccessfullAuth={this.handleSuccessfullAuth} />
           <Login handleSuccessfullAuth={this.handleSuccessfullAuth} />
