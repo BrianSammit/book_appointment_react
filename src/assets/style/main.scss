@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  display: flex;
+  height: 100vh;
+
+  .nav-bar {
+    width: 17%;
+    height: 100vh;
+    background-color: orangered;
+
+    .logo {
+      width: 95%;
+      height: 16%;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1632449015/Skate%20brands/logo_pqi497.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 3px solid rgba(151, 191, 16, 255);
+    }
+  }
+}

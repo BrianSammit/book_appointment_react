@@ -11,11 +11,9 @@ const proxyRules = require('../proxy/rules');
 // webpack plugins
 
 module.exports = webpackMerge(webpackCommon, {
-
   devtool: 'inline-source-map',
   mode: 'development',
   output: {
-
     path: path.resolve(__dirname, '../static/dist'),
 
     filename: '[name].js',
@@ -25,11 +23,9 @@ module.exports = webpackMerge(webpackCommon, {
     chunkFilename: '[id]-chunk.js',
 
     publicPath: '/',
-
   },
 
   module: {
-
     rules: [
       {
         test: /\.s?css$/,
@@ -53,8 +49,11 @@ module.exports = webpackMerge(webpackCommon, {
           },
         ],
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+      },
     ],
-
   },
 
   plugins: [
@@ -94,5 +93,4 @@ module.exports = webpackMerge(webpackCommon, {
   node: {
     fs: 'empty',
   },
-
 });

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Login from './auth/LogIn';
 import Registration from './auth/Registration';
+import '../assets/style/main.scss';
 
 export default class Home extends Component {
   constructor(props) {
@@ -28,15 +29,19 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Home</h1>
-        <h1>
-          Status:
-          {this.props.loggedInStatus}
-        </h1>
-        <button onClick={() => this.handleLogoutClick()}>Logout</button>
-        <Registration handleSuccessfullAuth={this.handleSuccessfullAuth} />
-        <Login handleSuccessfullAuth={this.handleSuccessfullAuth} />
+      <div className="home">
+        <nav className="nav-bar">
+          <img className="logo" />
+          <h1>
+            Status:
+            {this.props.loggedInStatus}
+          </h1>
+          <button onClick={() => this.handleLogoutClick()}>Logout</button>
+        </nav>
+        <div>
+          <Registration handleSuccessfullAuth={this.handleSuccessfullAuth} />
+          <Login handleSuccessfullAuth={this.handleSuccessfullAuth} />
+        </div>
       </div>
     );
   }

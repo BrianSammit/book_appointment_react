@@ -62,6 +62,10 @@ module.exports = webpackMerge(webpackCommon, {
           ],
         }),
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+      },
     ],
   },
 
