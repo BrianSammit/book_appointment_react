@@ -60,8 +60,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
+        <Navbar />
         <BrowserRouter>
-          <Navbar />
           <Switch>
             <Route
               exact
@@ -77,7 +77,7 @@ export default class App extends Component {
             />
             <Route
               exact
-              path="/dashboard"
+              path="/skates"
               render={(props) => (
                 <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
               )}
