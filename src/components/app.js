@@ -60,8 +60,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <Navbar />
         <BrowserRouter>
+          <Navbar />
           <Switch>
             <Route
               exact
