@@ -62,27 +62,29 @@ export default class App extends Component {
       <div className="app">
         <BrowserRouter>
           <Navbar />
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Home
-                  {...props}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                  loggedInStatus={this.state.loggedInStatus}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/skates"
-              render={(props) => (
-                <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
-              )}
-            />
-          </Switch>
+          <div className="content">
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <Home
+                    {...props}
+                    handleLogin={this.handleLogin}
+                    handleLogout={this.handleLogout}
+                    loggedInStatus={this.state.loggedInStatus}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/skates"
+                render={(props) => (
+                  <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                )}
+              />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );

@@ -75,6 +75,23 @@ export default class Navbar extends Component {
               REGISTER
             </div>
           </div>
+          <ul className="nav-icons">
+            <li>
+              <i className="fab fa-twitter"></i>
+            </li>
+            <li>
+              <i className="fab fa-facebook-f"></i>
+            </li>
+            <li>
+              <i className="fab fa-behance-square"></i>
+            </li>
+            <li>
+              <i className="fab fa-github"></i>
+            </li>
+            <li>
+              <i className="fab fa-pinterest-p"></i>
+            </li>
+          </ul>
         </div>
       </div>
     );

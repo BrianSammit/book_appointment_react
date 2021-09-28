@@ -10,9 +10,8 @@
   display: flex;
 
   .navbar {
-    background-color: red;
-
-    .logo {
+    .logo,
+    .nav-link {
       width: 130px;
       height: 90px;
     }
@@ -28,23 +27,23 @@
     }
 
     .nav-menu {
-      width: 16%;
-      height: 96vh;
+      background-color: #97bf10;
       padding: 10px;
       display: flex;
       flex-direction: column;
       position: absolute;
-      left: -20%;
-      transition: all 2s ease;
+      left: -500px;
+      transition: all 0.5s ease;
     }
 
     .nav-menu-active {
-      width: 16%;
-      height: 96vh;
+      background-color: red;
+      width: 100%;
+      height: 95vh;
+      padding: 10px;
       display: flex;
       flex-direction: column;
-      padding: 10px;
-      transition: all 2s ease;
+      transition: all 0.5s ease;
 
       .nav-link-active {
         color: #303236;
@@ -52,6 +51,7 @@
 
       ul {
         margin-top: 40px;
+        width: fit-content;
         display: flex;
         flex-direction: column;
         margin-right: -24px;
@@ -59,6 +59,7 @@
 
         li {
           margin-top: 5px;
+          width: fit-content;
         }
       }
 
@@ -89,6 +90,21 @@
           color: #303236;
         }
       }
+
+      .nav-icons {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: #303236;
+        list-style-type: none;
+      }
     }
+  }
+
+  .content {
+    background-color: purple;
+    margin-left: 50px;
   }
 }
