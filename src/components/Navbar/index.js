@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       clicked: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
   }
 
   handleClick() {
     this.setState({ clicked: !this.state.clicked });
+  }
+
+  handleLogoutClick() {
+    axios
+      .delete('http://localhost:3001/logout', { withCredentials: true })
+      .then(() => this.props.handleLogout())
+      .catch((error) => {
+        console.log('logout error', error);
+      });
   }
 
   render() {
@@ -50,9 +61,12 @@ export default class Navbar extends Component {
               </Link>
             </button>
             <button className="nav-btn-links">
-              <Link className="nav-btn-link" to="/register">
+              <Link className="nav-btn-link" to="/">
                 REGISTER
               </Link>
+            </button>
+            <button className="nav-btn-links" onClick={() => this.handleLogoutClick()}>
+              LOGOUT
             </button>
           </div>
           <ul className="nav-icons">
