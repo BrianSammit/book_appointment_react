@@ -44,12 +44,16 @@ export default class Navbar extends Component {
             </li>
           </ul>
           <div className="nav-btn">
-            <div className="nav-btn-link" to="/login">
-              LOGIN
-            </div>
-            <div className="nav-btn-link" to="/register">
-              REGISTER
-            </div>
+            <button className="nav-btn-links">
+              <Link className="nav-btn-link" to="/login">
+                LOGIN
+              </Link>
+            </button>
+            <button className="nav-btn-links">
+              <Link className="nav-btn-link" to="/register">
+                REGISTER
+              </Link>
+            </button>
           </div>
           <ul className="nav-icons">
             <li className="nav-icons-li">

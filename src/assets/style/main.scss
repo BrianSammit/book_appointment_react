@@ -95,14 +95,14 @@
         flex-direction: column;
         width: 130px;
 
-        .nav-btn-link {
+        .nav-btn-links {
           display: flex;
           justify-content: center;
           margin-top: 5px;
           border-radius: 4px;
           background: #97bf10;
           padding: 10px 22px;
-          color: #fff;
+          color: #303236;
           outline: none;
           border: none;
           cursor: pointer;
@@ -110,10 +110,22 @@
           text-decoration: none;
         }
 
-        .nav-btn-link:hover {
+        .nav-btn-link {
+          text-decoration: none;
+          color: #fff;
+        }
+
+        .nav-btn-links:hover,
+        .nav-btn-links:active {
           transition: all 0.2s ease-in-out;
           background: #fff;
           color: #303236;
+        }
+
+        .nav-btn-link:hover,
+        .nav-btn-link:active {
+          color: #303236;
+          background: #fff;
         }
       }
 

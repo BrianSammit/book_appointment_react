@@ -3,7 +3,7 @@ import React from 'react';
 const Dashboard = (props) => (
   <div>
     <div>
-      <h1>Dashboard</h1>
+      <h1>Skates</h1>
       <h1>
         Status:
         {props.loggedInStatus}
