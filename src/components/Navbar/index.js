@@ -29,42 +29,18 @@ export default class Navbar extends Component {
               className="logo"
             />
           </Link>
-          <ul>
+          <ul className="links">
             <li>
-              <Link
-                className="link"
-                to="/skates"
-                style={{ textDecoration: 'none', color: '#303236' }}
-              >
-                SKATES
-              </Link>
+              <Link to="/skates">SKATES</Link>
             </li>
             <li>
-              <Link
-                className="link"
-                to="/lifestyle"
-                style={{ textDecoration: 'none', color: '#303236' }}
-              >
-                LIFESTYLE
-              </Link>
+              <Link to="/lifestyle">LIFESTYLE</Link>
             </li>
             <li>
-              <Link
-                className="link"
-                to="/shop"
-                style={{ textDecoration: 'none', color: '#303236' }}
-              >
-                SHOP
-              </Link>
+              <Link to="/shop">SHOP</Link>
             </li>
             <li>
-              <Link
-                className="link"
-                to="/test"
-                style={{ textDecoration: 'none', color: '#303236' }}
-              >
-                TEST
-              </Link>
+              <Link to="/test">TEST</Link>
             </li>
           </ul>
           <div className="nav-btn">
@@ -76,22 +52,47 @@ export default class Navbar extends Component {
             </div>
           </div>
           <ul className="nav-icons">
-            <li>
-              <i className="fab fa-twitter"></i>
+            <li className="nav-icons-li">
+              <a className="nav-icons-link" href="https://twitter.com/CruzSammit" target="_blank">
+                <i className="fab fa-twitter" />
+              </a>
             </li>
-            <li>
-              <i className="fab fa-facebook-f"></i>
+            <li className="nav-icons-li">
+              <a
+                className="nav-icons-link"
+                href="https://www.facebook.com/groups/easkate4"
+                target="_blank"
+              >
+                <i className="fab fa-facebook-f" />
+              </a>
             </li>
-            <li>
-              <i className="fab fa-behance-square"></i>
+            <li className="nav-icons-li">
+              <a
+                className="nav-icons-link"
+                href="https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign"
+                target="_blank"
+              >
+                <i className="fab fa-behance-square" />
+              </a>
             </li>
-            <li>
-              <i className="fab fa-github"></i>
+            <li className="nav-icons-li">
+              <a className="nav-icons-link" href="https://github.com/BrianSammit" target="_blank">
+                <i className="fab fa-github" />
+              </a>
             </li>
-            <li>
-              <i className="fab fa-pinterest-p"></i>
+            <li className="nav-icons-li">
+              <a
+                className="nav-icons-link"
+                href="https://www.pinterest.es/uolker/skate/"
+                target="_blank"
+              >
+                <i className="fab fa-pinterest-p" />
+              </a>
             </li>
           </ul>
+          <div className="copy">
+            <p>Copyright © 2021 Brian Sammit. All rights reserved.</p>
+          </div>
         </div>
       </div>
     );

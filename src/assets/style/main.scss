@@ -10,11 +10,7 @@
   display: flex;
 
   .navbar {
-    .logo,
-    .nav-link {
-      width: 130px;
-      height: 90px;
-    }
+    width: fit-content;
 
     .menu-icon {
       display: block;
@@ -34,22 +30,33 @@
       position: absolute;
       left: -500px;
       transition: all 0.5s ease;
+
+      .logo,
+      .nav-link {
+        width: 130px;
+        height: 90px;
+      }
     }
 
     .nav-menu-active {
-      background-color: red;
-      width: 100%;
+      width: fit-content;
       height: 95vh;
       padding: 10px;
       display: flex;
       flex-direction: column;
       transition: all 0.5s ease;
 
+      .logo,
+      .nav-link {
+        width: 130px;
+        height: 90px;
+      }
+
       .nav-link-active {
         color: #303236;
       }
 
-      ul {
+      .links {
         margin-top: 40px;
         width: fit-content;
         display: flex;
@@ -59,7 +66,26 @@
 
         li {
           margin-top: 5px;
-          width: fit-content;
+          padding: 3px;
+          width: 120px;
+
+          a {
+            text-decoration: none;
+            color: #303236;
+          }
+        }
+
+        li:active,
+        li:hover {
+          width: 120px;
+          padding: 4px;
+          background: #97bf10;
+          border-radius: 4px;
+          transition: all 0.2s ease-in-out;
+
+          a {
+            color: #fff;
+          }
         }
       }
 
@@ -99,12 +125,27 @@
         justify-content: space-evenly;
         color: #303236;
         list-style-type: none;
+
+        .nav-icons-li {
+          .nav-icons-link {
+            text-decoration: none;
+            color: #303236;
+          }
+        }
+      }
+
+      .copy {
+        display: flex;
+        text-align: center;
+        margin-top: 10px;
+        width: 120px;
+        font-size: 8px;
+        color: #303236;
       }
     }
   }
 
   .content {
     background-color: purple;
-    margin-left: 50px;
   }
 }
