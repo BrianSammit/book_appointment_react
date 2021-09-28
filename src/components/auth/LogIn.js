@@ -50,9 +50,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const {
-      username, email, password, passwordConfirmation,
-    } = this.state;
+    const { username, email, password, passwordConfirmation } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
