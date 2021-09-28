@@ -13,10 +13,12 @@ export default class App extends Component {
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
       user: {},
+      clicked: false,
     };
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   checkLoginStatus() {
@@ -57,10 +59,17 @@ export default class App extends Component {
     });
   }
 
+  handleClick() {
+    this.setState({ clicked: !this.state.clicked });
+  }
+
   render() {
     return (
       <div className="app">
         <BrowserRouter>
+          <div className="menu-icon" onClick={this.handleClick}>
+            <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+          </div>
           <Navbar />
           <Switch>
             <Route
