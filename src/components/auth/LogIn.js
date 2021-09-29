@@ -53,7 +53,7 @@ export default class Login extends Component {
     const { username, email, password } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="username"
