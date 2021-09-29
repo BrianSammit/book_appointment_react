@@ -56,40 +56,96 @@ export default class Registration extends Component {
     return (
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            placeholder="User"
-            value={username}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={password}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="passwordConfirmation"
-            placeholder="Password Confirmation"
-            value={passwordConfirmation}
-            onChange={this.handleChange}
-            required
-          />
+          <div className="control block-cube block-input">
+            <input
+              type="text"
+              name="username"
+              placeholder="User"
+              value={username}
+              onChange={this.handleChange}
+              required
+            />
+            <div className="bg-top">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg-right">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg">
+              <div className="bg-inner"></div>
+            </div>
+          </div>
+          <div className="control block-cube block-input">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={this.handleChange}
+              required
+            />
+            <div className="bg-top">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg-right">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg">
+              <div className="bg-inner"></div>
+            </div>
+          </div>
+          <div className="control block-cube block-input">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={this.handleChange}
+              required
+            />
+            <div className="bg-top">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg-right">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg">
+              <div className="bg-inner"></div>
+            </div>
+          </div>
 
-          <button type="submit">Register</button>
+          <div className="control block-cube block-input">
+            <input
+              type="password"
+              name="passwordConfirmation"
+              placeholder="Password Confirmation"
+              value={passwordConfirmation}
+              onChange={this.handleChange}
+              required
+            />
+            <div className="bg-top">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg-right">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg">
+              <div className="bg-inner"></div>
+            </div>
+          </div>
+
+          <button className="btn block-cube block-cube-hover" type="submit">
+            <div className="bg-top">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg-right">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="bg">
+              <div className="bg-inner"></div>
+            </div>
+            <div className="text">Log In</div>
+          </button>
         </form>
       </div>
     );
