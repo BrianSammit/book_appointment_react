@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Dashboard from './Dashboard';
-import Home from './Home';
+import HomeRegistration from './HomeRegistration';
+import HomeLogin from './HomeLogin.js';
 import Navbar from './Navbar';
 
 export default class App extends Component {
@@ -68,7 +69,19 @@ export default class App extends Component {
                 exact
                 path="/"
                 render={(props) => (
-                  <Home
+                  <HomeRegistration
+                    {...props}
+                    handleLogin={this.handleLogin}
+                    handleLogout={this.handleLogout}
+                    loggedInStatus={this.state.loggedInStatus}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/login"
+                render={(props) => (
+                  <HomeLogin
                     {...props}
                     handleLogin={this.handleLogin}
                     handleLogout={this.handleLogout}

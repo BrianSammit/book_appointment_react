@@ -66,7 +66,9 @@ export default class Navbar extends Component {
               </Link>
             </button>
             <button className="nav-btn-links" onClick={() => this.handleLogoutClick()}>
-              LOGOUT
+              <Link className="nav-btn-link" to="/">
+                LOGOUT
+              </Link>
             </button>
           </div>
           <ul className="nav-icons">
