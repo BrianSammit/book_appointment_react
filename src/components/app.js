@@ -4,7 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Dashboard from './Dashboard';
 import HomeRegistration from './HomeRegistration';
-import HomeLogin from './HomeLogin.js';
+import HomeLogin from './HomeLogin';
+import Lifestyle from './Lifestyle';
 import Navbar from './Navbar';
 
 export default class App extends Component {
@@ -65,16 +66,14 @@ export default class App extends Component {
           <Navbar />
           <div className="content">
             <Switch>
+              <Route exact path="/lifestyle">
+                <Lifestyle />
+              </Route>
               <Route
                 exact
-                path="/registration"
+                path="/skates"
                 render={(props) => (
-                  <HomeRegistration
-                    {...props}
-                    handleLogin={this.handleLogin}
-                    handleLogout={this.handleLogout}
-                    loggedInStatus={this.state.loggedInStatus}
-                  />
+                  <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
                 )}
               />
               <Route
@@ -91,9 +90,14 @@ export default class App extends Component {
               />
               <Route
                 exact
-                path="/skates"
+                path="/registration"
                 render={(props) => (
-                  <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                  <HomeRegistration
+                    {...props}
+                    handleLogin={this.handleLogin}
+                    handleLogout={this.handleLogout}
+                    loggedInStatus={this.state.loggedInStatus}
+                  />
                 )}
               />
             </Switch>

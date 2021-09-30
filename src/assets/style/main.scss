@@ -10,7 +10,12 @@
 
 $bg_body: #303236;
 $bg_gradient_last_color: rgba(151, 191, 16, 1);
-$bg_gradient: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(48, 50, 54, 1) 37%, $bg_gradient_last_color 94%);
+$bg_gradient: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 1) 0%,
+  rgba(48, 50, 54, 1) 37%,
+  $bg_gradient_last_color 94%
+);
 
 .app {
   display: flex;
@@ -199,6 +204,104 @@ $bg_gradient: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(48, 50, 54, 1) 37
       background-size: cover;
       background-position: center;
       background-blend-mode: multiply;
+    }
+
+    .lifestyle-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #59595c;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633030848/Skate%20brands/back-4_cvrkws.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+
+      .lifestyle-square {
+        background-color: #97bf10;
+        width: 70%;
+        height: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        .lifestyle-div-1 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032958/Skate%20brands/back-life-1_ycwo4o.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-2 {
+          background-color: #99c110;
+        }
+
+        .lifestyle-div-3 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032959/Skate%20brands/back-life-2_vdawje.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-4 {
+          background-color: #ffc600;
+        }
+
+        .lifestyle-div-5 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032958/Skate%20brands/back-life-5_f6nsc8.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-6 {
+          background-color: #252525;
+        }
+
+        .lifestyle-div-7 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032959/Skate%20brands/back-life-3_sysepw.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-8 {
+          background-color: #10bbb5;
+        }
+
+        .lifestyle-div-9 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032958/Skate%20brands/back-life-4_kt287e.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .div-color {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          h5 {
+            color: #fff;
+            width: fit-content;
+          }
+
+          .fa-angle-right {
+            margin-top: 15px;
+            padding: 5px 8px;
+            border: solid 2px #fff;
+            border-radius: 50%;
+            color: #fff;
+            width: fit-content;
+          }
+        }
+      }
     }
   }
 
