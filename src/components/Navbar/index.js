@@ -83,20 +83,24 @@ export default class Navbar extends Component {
             {this.state.loggedInStatus == 'NOT_LOGGED_IN' ? (
               <div className="nav-btn">
                 <button className="nav-btn-links">
-                  <Link className="nav-btn-link" to="/login" onClick={this.checkLoginStatus()}>
+                  <Link className="nav-btn-link" to="/" onClick={this.checkLoginStatus()}>
                     LOGIN
                   </Link>
                 </button>
                 <button className="nav-btn-links">
-                  <Link className="nav-btn-link" to="/" onClick={this.checkLoginStatus()}>
+                  <Link
+                    className="nav-btn-link"
+                    to="/registration"
+                    onClick={this.checkLoginStatus()}
+                  >
                     REGISTER
                   </Link>
                 </button>
               </div>
             ) : (
               <div className="nav-btn">
-                <button className="nav-btn-links" onClick={() => this.handleLogoutClick()}>
-                  <Link className="nav-btn-link" to="/">
+                <button className="nav-btn-links" onClick={this.checkLoginStatus()}>
+                  <Link className="nav-btn-link" to="/" onClick={() => this.handleLogoutClick()}>
                     LOGOUT
                   </Link>
                 </button>
