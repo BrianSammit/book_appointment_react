@@ -8,10 +8,35 @@ export default class Navbar extends Component {
 
     this.state = {
       clicked: false,
+      loggedInStatus: 'NOT_LOGGED_IN',
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
+  }
+
+  checkLoginStatus() {
+    axios
+      .get('http://localhost:3001/logged_in', { withCredentials: true })
+      .then((response) => {
+        if (response.data.logged_in && this.state.loggedInStatus === 'NOT_LOGGED_IN') {
+          this.setState({
+            loggedInStatus: 'LOGGED_IN',
+            user: response.data.user,
+          });
+        } else if (!response.data.logged_in & (this.state.loggedInStatus === 'LOGGED_IN')) {
+          this.setState({
+            loggedInStatus: 'NOT_LOGGED_IN',
+          });
+        }
+      })
+      .catch((error) => {
+        console.log('check login error', error);
+      });
+  }
+
+  componentDidMount() {
+    this.checkLoginStatus();
   }
 
   handleClick() {
@@ -54,22 +79,29 @@ export default class Navbar extends Component {
               <Link to="/test">TEST</Link>
             </li>
           </ul>
-          <div className="nav-btn">
-            <button className="nav-btn-links">
-              <Link className="nav-btn-link" to="/login">
-                LOGIN
-              </Link>
-            </button>
-            <button className="nav-btn-links">
-              <Link className="nav-btn-link" to="/">
-                REGISTER
-              </Link>
-            </button>
-            <button className="nav-btn-links" onClick={() => this.handleLogoutClick()}>
-              <Link className="nav-btn-link" to="/">
-                LOGOUT
-              </Link>
-            </button>
+          <div>
+            {this.state.loggedInStatus == 'NOT_LOGGED_IN' ? (
+              <div className="nav-btn">
+                <button className="nav-btn-links">
+                  <Link className="nav-btn-link" to="/login" onClick={this.checkLoginStatus()}>
+                    LOGIN
+                  </Link>
+                </button>
+                <button className="nav-btn-links">
+                  <Link className="nav-btn-link" to="/" onClick={this.checkLoginStatus()}>
+                    REGISTER
+                  </Link>
+                </button>
+              </div>
+            ) : (
+              <div className="nav-btn">
+                <button className="nav-btn-links" onClick={() => this.handleLogoutClick()}>
+                  <Link className="nav-btn-link" to="/">
+                    LOGOUT
+                  </Link>
+                </button>
+              </div>
+            )}
           </div>
           <ul className="nav-icons">
             <li className="nav-icons-li">
