@@ -1,7 +1,6 @@
 /* eslint-disable react/prefer-stateless-function, react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import Login from './auth/LogIn';
-import '../assets/style/main.scss';
 
 export default class HomeLogin extends Component {
   constructor(props) {

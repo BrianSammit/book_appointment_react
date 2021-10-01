@@ -1,7 +1,6 @@
 /* eslint-disable react/prefer-stateless-function, react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 import Registration from './auth/Registration';
-import '../assets/style/main.scss';
 
 export default class HomeRegistration extends Component {
   constructor(props) {
