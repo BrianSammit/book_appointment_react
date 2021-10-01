@@ -56,7 +56,7 @@ export default class Countdown extends Component {
     return (
       <div className="countdown">
         {Object.keys(this.state).map((key) => (
-          <div className="countdown-segment">
+          <div className="countdown-segment" key={key.toString()}>
             <span className="countdown-segment-number">{this.addZeros(this.state[key])}</span>
             <span className="countdown-segment-caption">{key.toUpperCase()}</span>
           </div>
