@@ -7,6 +7,7 @@ import HomeRegistration from './HomeRegistration';
 import HomeLogin from './HomeLogin';
 import Lifestyle from './Lifestyle';
 import Navbar from './Navbar';
+import Shop from './Shop';
 
 export default class App extends Component {
   constructor() {
@@ -68,6 +69,9 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/lifestyle">
                 <Lifestyle />
+              </Route>
+              <Route exact path="/Shop">
+                <Shop />
               </Route>
               <Route
                 exact

@@ -221,7 +221,6 @@ $bg_gradient: linear-gradient(
       background-blend-mode: multiply;
 
       .lifestyle-square {
-        background-color: #97bf10;
         width: 70%;
         height: 70%;
         display: grid;
@@ -301,6 +300,30 @@ $bg_gradient: linear-gradient(
             width: fit-content;
           }
         }
+      }
+    }
+
+    .shop-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #a8a8af;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633037405/Skate%20brands/back-5_r8xmh6.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+
+      .shop-square {
+        background-color: #97bf10;
+        width: 70%;
+        height: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
       }
     }
   }
