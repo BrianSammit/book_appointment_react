@@ -18,6 +18,7 @@ class Shop extends Component {
       <div className="shop-container">
         <div className="shop-square">
           <Countdown futureDate={countdown.futureDate}></Countdown>
+          <h2 className="comming"> COMMING SOON !!</h2>
         </div>
       </div>
     );

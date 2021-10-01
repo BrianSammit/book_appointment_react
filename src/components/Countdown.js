@@ -8,8 +8,8 @@ export default class Countdown extends Component {
     this.state = {
       days: 0,
       hours: 0,
-      minutes: 0,
-      secs: 0,
+      min: 0,
+      sec: 0,
     };
   }
 
@@ -30,14 +30,14 @@ export default class Countdown extends Component {
 
     const days = Math.floor(clockDuration.asDays());
     const hours = clockDuration.hours();
-    const minutes = clockDuration.minutes();
-    const secs = clockDuration.seconds();
+    const min = clockDuration.minutes();
+    const sec = clockDuration.seconds();
 
     this.setState({
       days,
       hours,
-      minutes,
-      secs,
+      min,
+      sec,
     });
   }
 

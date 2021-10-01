@@ -318,12 +318,43 @@ $bg_gradient: linear-gradient(
       background-blend-mode: multiply;
 
       .shop-square {
-        background-color: #97bf10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633057466/Skate%20brands/back-count_vqslxt.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         width: 70%;
         height: 70%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+
+        .countdown {
+          width: 70%;
+          display: flex;
+          justify-content: space-evenly;
+
+          .countdown-segment {
+            display: flex;
+            flex-direction: column;
+
+            .countdown-segment-number {
+              font-size: 25px;
+              color: #fff;
+            }
+
+            .countdown-segment-caption {
+              margin-top: 10px;
+              color: #99c110;
+            }
+          }
+        }
+
+        .comming {
+          margin-top: 40px;
+          color: #fff;
+        }
       }
     }
   }
