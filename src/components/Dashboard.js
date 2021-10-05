@@ -34,12 +34,46 @@ export default class Dashboard extends Component {
 
     return (
       <div className="div-carousel">
-        <h2>Skateboards</h2>
+        <h1>LATES MODELS</h1>
+        <p>Please select a skate model</p>
         <Carousel breakPoints={breakPoints}>
           {skates.map((skate) => (
             <div className="item" key={skate.id}>
-              {skate.brand}
               <img className="ca-img" src={skate.image} alt={skate.brand} />
+              <h3>{skate.brand}</h3>
+              <ul className="ca-icons">
+                <li className="ca-icons-li">
+                  <a
+                    className="ca-icons-link"
+                    href="https://twitter.com/CruzSammit"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fab fa-twitter" />
+                  </a>
+                </li>
+                <li className="ca-icons-li">
+                  <a
+                    className="ca-icons-link"
+                    href="https://www.facebook.com/groups/easkate4"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fab fa-facebook-f" />
+                  </a>
+                </li>
+
+                <li className="ca-icons-li">
+                  <a
+                    className="ca-icons-link"
+                    href="https://github.com/BrianSammit"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fab fa-github" />
+                  </a>
+                </li>
+              </ul>
             </div>
           ))}
         </Carousel>

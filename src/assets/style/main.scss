@@ -515,20 +515,52 @@ $bg_gradient: linear-gradient(
     justify-content: center;
     height: 100vh;
 
+    h1 {
+      font-weight: bold;
+    }
+
+    p {
+      color: rgba(119, 119, 119, 0.5);
+      font-size: 12px;
+    }
+
     .item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 300px;
+      height: 350px;
       width: 100%;
-      color: #59595c;
       margin: 0 15px;
       font-size: 1em;
-      background-color: #10bbb5;
+
+      h3 {
+        color: black;
+        padding: 10px;
+        border-bottom: 1px solid rgba(119, 119, 119, 0.5);
+      }
 
       .ca-img {
         width: 100%;
+      }
+
+      .ca-icons {
+        width: 70%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style-type: none;
+
+        .ca-icons-li {
+          .ca-icons-link {
+            text-decoration: none;
+            color: rgba(119, 119, 119, 0.5);
+            border: 1px solid rgba(119, 119, 119, 0.5);
+            border-radius: 50%;
+            padding: 10px 14px;
+          }
+        }
       }
     }
   }
