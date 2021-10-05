@@ -174,7 +174,6 @@ $bg_gradient: linear-gradient(
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: purple;
 
     .home-login {
       display: flex;
@@ -504,6 +503,29 @@ $bg_gradient: linear-gradient(
           top: 100%;
         }
       }
+    }
+  }
+
+  .div-carousel {
+    width: 100%;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      width: 100%;
+      background-color: #00008b;
+      color: #fff;
+      margin: 0 15px;
+      font-size: 4em;
     }
   }
 }

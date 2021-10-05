@@ -20,7 +20,9 @@ export default class Registration extends Component {
   }
 
   handleSubmit(e) {
-    const { username, email, password, passwordConfirmation } = this.state;
+    const {
+      username, email, password, passwordConfirmation,
+    } = this.state;
     axios
       .post(
         'http://localhost:3001/registrations',
@@ -52,7 +54,9 @@ export default class Registration extends Component {
   }
 
   render() {
-    const { username, email, password, passwordConfirmation } = this.state;
+    const {
+      username, email, password, passwordConfirmation,
+    } = this.state;
     return (
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
@@ -66,13 +70,13 @@ export default class Registration extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
           <div className="control block-cube block-input">
@@ -85,13 +89,13 @@ export default class Registration extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
           <div className="control block-cube block-input">
@@ -104,13 +108,13 @@ export default class Registration extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
 
@@ -124,25 +128,25 @@ export default class Registration extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
 
           <button className="btn block-cube block-cube-hover" type="submit">
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="text">Log In</div>
           </button>

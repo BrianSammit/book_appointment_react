@@ -56,7 +56,7 @@ export default class Navbar extends Component {
     return (
       <div className="navbar">
         <div className="menu-icon" onClick={this.handleClick}>
-          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <div className={this.state.clicked ? 'nav-menu-active' : 'nav-menu'}>
           <Link className="nav-link" to="/skates">
@@ -109,7 +109,7 @@ export default class Navbar extends Component {
           </div>
           <ul className="nav-icons">
             <li className="nav-icons-li">
-              <a className="nav-icons-link" href="https://twitter.com/CruzSammit" target="_blank">
+              <a className="nav-icons-link" href="https://twitter.com/CruzSammit" target="_blank" rel="noreferrer">
                 <i className="fab fa-twitter" />
               </a>
             </li>
@@ -118,6 +118,7 @@ export default class Navbar extends Component {
                 className="nav-icons-link"
                 href="https://www.facebook.com/groups/easkate4"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fab fa-facebook-f" />
               </a>
@@ -127,12 +128,13 @@ export default class Navbar extends Component {
                 className="nav-icons-link"
                 href="https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fab fa-behance-square" />
               </a>
             </li>
             <li className="nav-icons-li">
-              <a className="nav-icons-link" href="https://github.com/BrianSammit" target="_blank">
+              <a className="nav-icons-link" href="https://github.com/BrianSammit" target="_blank" rel="noreferrer">
                 <i className="fab fa-github" />
               </a>
             </li>
@@ -141,6 +143,7 @@ export default class Navbar extends Component {
                 className="nav-icons-link"
                 href="https://www.pinterest.es/uolker/skate/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fab fa-pinterest-p" />
               </a>

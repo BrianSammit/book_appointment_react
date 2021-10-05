@@ -64,13 +64,13 @@ export default class Login extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
           <div className="control block-cube block-input">
@@ -83,13 +83,13 @@ export default class Login extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
           <div className="control block-cube block-input">
@@ -102,25 +102,25 @@ export default class Login extends Component {
               required
             />
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
           </div>
 
           <button className="btn block-cube block-cube-hover" type="submit">
             <div className="bg-top">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg-right">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="bg">
-              <div className="bg-inner"></div>
+              <div className="bg-inner" />
             </div>
             <div className="text">Log In</div>
           </button>

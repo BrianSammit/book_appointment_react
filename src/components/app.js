@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 import HomeRegistration from './HomeRegistration';
 import HomeLogin from './HomeLogin';
 import Lifestyle from './Lifestyle';
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 import Shop from './Shop';
 
 export default class App extends Component {
