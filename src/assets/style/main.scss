@@ -520,12 +520,16 @@ $bg_gradient: linear-gradient(
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 250px;
+      height: 300px;
       width: 100%;
-      background-color: #00008b;
-      color: #fff;
+      color: #59595c;
       margin: 0 15px;
-      font-size: 4em;
+      font-size: 1em;
+      background-color: #10bbb5;
+
+      .ca-img {
+        width: 100%;
+      }
     }
   }
 }

@@ -39,13 +39,7 @@ export default class Dashboard extends Component {
           {skates.map((skate) => (
             <div className="item" key={skate.id}>
               {skate.brand}
-              <div
-                style={{
-                  backgroundImage: `url(${skate.image})`,
-                  width: '100px',
-                  height: '100px',
-                }}
-              />
+              <img className="ca-img" src={skate.image} alt={skate.brand} />
             </div>
           ))}
         </Carousel>
