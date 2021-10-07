@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Skate = (props) => {
   const { match } = props;
@@ -22,45 +23,15 @@ const Skate = (props) => {
     const { id, brand, image } = skate;
 
     return (
-      <>
-        <div className="item">
-          <h3>{brand}</h3>
-          <img className="ca-img" src={image} alt={brand} />
-          <ul className="ca-icons">
-            <li className="ca-icons-li">
-              <a
-                className="ca-icons-link"
-                href="https://twitter.com/CruzSammit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fab fa-twitter" />
-              </a>
-            </li>
-            <li className="ca-icons-li">
-              <a
-                className="ca-icons-link"
-                href="https://www.facebook.com/groups/easkate4"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fab fa-facebook-f" />
-              </a>
-            </li>
-
-            <li className="ca-icons-li">
-              <a
-                className="ca-icons-link"
-                href="https://github.com/BrianSammit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fab fa-github" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </>
+      <div className="skate-item">
+        <h1>{brand}</h1>
+        <img className="ca-img" src={image} alt={brand} />
+        <button className="btn-div">
+          <Link className="btn" to="/skates">
+            Go back
+          </Link>
+        </button>
+      </div>
     );
   };
 

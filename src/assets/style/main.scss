@@ -564,6 +564,49 @@ $bg_gradient: linear-gradient(
       }
     }
   }
+
+  .skate-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .ca-img {
+      width: 100%;
+    }
+
+    .btn-div {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      border-radius: 4px;
+      background: #97bf10;
+      padding: 10px 22px;
+      color: #fff;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn-div:hover,
+    .btn-div:active {
+      transition: all 0.2s ease-in-out;
+      background: #fff;
+      color: #303236;
+    }
+
+    .btn:hover,
+    .btn:active {
+      color: #303236;
+    }
+  }
 }
 
 /* stylelint-enable no-descending-specificity */
