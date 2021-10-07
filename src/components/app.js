@@ -8,7 +8,7 @@ import HomeLogin from './HomeLogin';
 import Lifestyle from './Lifestyle';
 import Navbar from './Navbar/Navbar';
 import Shop from './Shop';
-
+import Skate from './Skate';
 export default class App extends Component {
   constructor() {
     super();
@@ -104,6 +104,7 @@ export default class App extends Component {
                   />
                 )}
               />
+              <Route exact path="/:skateId" render={(props) => <Skate {...props} />} />
             </Switch>
           </div>
         </BrowserRouter>

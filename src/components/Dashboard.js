@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from 'react-elastic-carousel';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class Dashboard extends Component {
@@ -39,7 +40,9 @@ export default class Dashboard extends Component {
         <Carousel breakPoints={breakPoints}>
           {skates.map((skate) => (
             <div className="item" key={skate.id}>
-              <img className="ca-img" src={skate.image} alt={skate.brand} />
+              <Link to={`${skate.id}`}>
+                <img className="ca-img" src={skate.image} alt={skate.brand} />
+              </Link>
               <h3>{skate.brand}</h3>
               <ul className="ca-icons">
                 <li className="ca-icons-li">
