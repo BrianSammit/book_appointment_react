@@ -76,7 +76,7 @@ export default class Navbar extends Component {
               <Link to="/shop">SHOP</Link>
             </li>
             <li>
-              <Link to="/test">TEST</Link>
+              <Link to="/test">TESTS</Link>
             </li>
           </ul>
           <div>
@@ -109,7 +109,12 @@ export default class Navbar extends Component {
           </div>
           <ul className="nav-icons">
             <li className="nav-icons-li">
-              <a className="nav-icons-link" href="https://twitter.com/CruzSammit" target="_blank" rel="noreferrer">
+              <a
+                className="nav-icons-link"
+                href="https://twitter.com/CruzSammit"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-twitter" />
               </a>
             </li>
@@ -134,7 +139,12 @@ export default class Navbar extends Component {
               </a>
             </li>
             <li className="nav-icons-li">
-              <a className="nav-icons-link" href="https://github.com/BrianSammit" target="_blank" rel="noreferrer">
+              <a
+                className="nav-icons-link"
+                href="https://github.com/BrianSammit"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-github" />
               </a>
             </li>

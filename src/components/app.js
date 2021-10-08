@@ -9,6 +9,7 @@ import Lifestyle from './Lifestyle';
 import Navbar from './Navbar/Navbar';
 import Shop from './Shop';
 import Skate from './Skate';
+import Test from './Test';
 export default class App extends Component {
   constructor() {
     super();
@@ -67,12 +68,6 @@ export default class App extends Component {
           <Navbar />
           <div className="content">
             <Switch>
-              <Route exact path="/lifestyle">
-                <Lifestyle />
-              </Route>
-              <Route exact path="/Shop">
-                <Shop />
-              </Route>
               <Route
                 exact
                 path="/skates"
@@ -80,6 +75,15 @@ export default class App extends Component {
                   <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
                 )}
               />
+              <Route exact path="/lifestyle">
+                <Lifestyle />
+              </Route>
+              <Route exact path="/Shop">
+                <Shop />
+              </Route>
+              <Route exact path="/test">
+                <Test />
+              </Route>
               <Route
                 exact
                 path="/"
