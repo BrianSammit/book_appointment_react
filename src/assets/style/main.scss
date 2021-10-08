@@ -607,6 +607,40 @@ $bg_gradient: linear-gradient(
       color: #303236;
     }
   }
+
+  .div-appo {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8af;
+    background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633717371/Skate%20brands/back-6_m85ud6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+
+    table {
+      background-color: #252525;
+
+      th,
+      td {
+        color: #fff;
+        border: solid 1px rgb(255, 255, 255);
+        padding: 10px;
+      }
+
+      th {
+        font-size: 20px;
+      }
+
+      td {
+        font-size: 15px;
+      }
+    }
+  }
 }
 
 /* stylelint-enable no-descending-specificity */
