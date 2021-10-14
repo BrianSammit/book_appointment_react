@@ -108,7 +108,7 @@ export default class App extends Component {
                   />
                 )}
               />
-              <Route exact path="/:skateId" render={(props) => <Skate {...props} />} />
+              <Route exact path="/:skateboard_id" render={(props) => <Skate {...props} />} />
             </Switch>
           </div>
         </BrowserRouter>
