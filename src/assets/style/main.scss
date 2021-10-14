@@ -641,6 +641,74 @@ $bg_gradient: linear-gradient(
       }
     }
   }
+
+  .skate_form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .div-test-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: solid 1px rgba(119, 119, 119, 0.5);
+      padding: 10px;
+
+      h2 {
+        color: #97bf10;
+      }
+
+      .test_form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        .btn-div {
+          display: flex;
+          justify-content: center;
+          margin-top: 5px;
+          border-radius: 4px;
+          background: #97bf10;
+          padding: 10px 22px;
+          color: #fff;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          text-decoration: none;
+        }
+
+        .btn {
+          text-decoration: none;
+          color: #fff;
+        }
+
+        .btn-div:hover,
+        .btn-div:active {
+          transition: all 0.2s ease-in-out;
+          background: #fff;
+          color: #303236;
+        }
+
+        .btn:hover,
+        .btn:active {
+          color: #303236;
+        }
+
+        .label-input {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          input {
+            padding: 5px;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* stylelint-enable no-descending-specificity */
