@@ -15,52 +15,58 @@ export default class Navbar extends Component {
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
   }
 
-  checkLoginStatus() {
+  componentDidMount() {
+    this.checkLoginStatus();
+  }
+
+  handleClick() {
+    const { clicked } = this.state;
+    this.setState({ clicked: !clicked });
+  }
+
+  handleLogoutClick() {
+    const { handleLogout } = this.props; /* eslint-disable-line */
     axios
-      .get('http://localhost:3001/logged_in', { withCredentials: true })
+      .delete('https://skate-store-api.herokuapp.com/logout', { withCredentials: true })
+      .then(() => handleLogout())
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
+  checkLoginStatus() {
+    const { loggedInStatus } = this.props; /* eslint-disable-line */
+    axios
+      .get('https://skate-store-api.herokuapp.com/logged_in', { withCredentials: true })
       .then((response) => {
-        if (response.data.logged_in && this.state.loggedInStatus === 'NOT_LOGGED_IN') {
+        if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
           this.setState({
             loggedInStatus: 'LOGGED_IN',
-            user: response.data.user,
+            user: response.data.user /* eslint-disable-line */,
           });
-        } else if (!response.data.logged_in & (this.state.loggedInStatus === 'LOGGED_IN')) {
+        } else if (!response.data.logged_in && loggedInStatus === 'LOGGED_IN') {
           this.setState({
             loggedInStatus: 'NOT_LOGGED_IN',
           });
         }
       })
       .catch((error) => {
-        console.log('check login error', error);
-      });
-  }
-
-  componentDidMount() {
-    this.checkLoginStatus();
-  }
-
-  handleClick() {
-    this.setState({ clicked: !this.state.clicked });
-  }
-
-  handleLogoutClick() {
-    axios
-      .delete('http://localhost:3001/logout', { withCredentials: true })
-      .then(() => this.props.handleLogout())
-      .catch((error) => {
-        console.log('logout error', error);
+        throw new Error(error);
       });
   }
 
   render() {
+    const { clicked } = this.state;
+    const { loggedInStatus } = this.state; /* eslint-disable-line */
     return (
       <div className="navbar">
-        <div className="menu-icon" onClick={this.handleClick}>
-          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        <div className={this.state.clicked ? 'nav-menu-active' : 'nav-menu'}>
+        <button type="button" className="menu-icon" onClick={this.handleClick}>
+          <i className={clicked ? 'fas fa-times' : 'fas fa-bars'} />
+        </button>
+        <div className={clicked ? 'nav-menu-active' : 'nav-menu'}>
           <Link className="nav-link" to="/skates">
             <img
+              alt="logo"
               src="https://res.cloudinary.com/ddjesec95/image/upload/v1632449015/Skate%20brands/logo_pqi497.png"
               className="logo"
             />
@@ -80,14 +86,14 @@ export default class Navbar extends Component {
             </li>
           </ul>
           <div>
-            {this.state.loggedInStatus == 'NOT_LOGGED_IN' ? (
+            {loggedInStatus === 'NOT_LOGGED_IN' ? (
               <div className="nav-btn">
-                <button className="nav-btn-links">
+                <button type="button" className="nav-btn-links">
                   <Link className="nav-btn-link" to="/" onClick={this.checkLoginStatus()}>
                     LOGIN
                   </Link>
                 </button>
-                <button className="nav-btn-links">
+                <button type="button" className="nav-btn-links">
                   <Link
                     className="nav-btn-link"
                     to="/registration"
@@ -99,7 +105,7 @@ export default class Navbar extends Component {
               </div>
             ) : (
               <div className="nav-btn">
-                <button className="nav-btn-links" onClick={this.checkLoginStatus()}>
+                <button type="button" className="nav-btn-links" onClick={this.checkLoginStatus()}>
                   <Link className="nav-btn-link" to="/" onClick={() => this.handleLogoutClick()}>
                     LOGOUT
                   </Link>

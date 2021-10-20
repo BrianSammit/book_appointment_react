@@ -1,4 +1,4 @@
-/* eslint-disable react/prefer-stateless-function, react/jsx-props-no-spreading */
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
@@ -10,6 +10,7 @@ import Navbar from './Navbar/Navbar';
 import Shop from './Shop';
 import Skate from './Skate';
 import Test from './Test';
+
 export default class App extends Component {
   constructor() {
     super();
@@ -21,26 +22,6 @@ export default class App extends Component {
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
-  }
-
-  checkLoginStatus() {
-    axios
-      .get('http://localhost:3001/logged_in', { withCredentials: true })
-      .then((response) => {
-        if (response.data.logged_in && this.state.loggedInStatus === 'NOT_LOGGED_IN') {
-          this.setState({
-            loggedInStatus: 'LOGGED_IN',
-            user: response.data.user,
-          });
-        } else if (!response.data.logged_in & (this.state.loggedInStatus === 'LOGGED_IN')) {
-          this.setState({
-            loggedInStatus: 'NOT_LOGGED_IN',
-          });
-        }
-      })
-      .catch((error) => {
-        console.log('check login error', error);
-      });
   }
 
   componentDidMount() {
@@ -61,7 +42,29 @@ export default class App extends Component {
     });
   }
 
+  checkLoginStatus() {
+    const { loggedInStatus } = this.state;
+    axios
+      .get('https://skate-store-api.herokuapp.com//logged_in', { withCredentials: true })
+      .then((response) => {
+        if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
+          this.setState({
+            loggedInStatus: 'LOGGED_IN',
+            user: response.data.user,
+          });
+        } else if (!response.data.logged_in && loggedInStatus === 'LOGGED_IN') {
+          this.setState({
+            loggedInStatus: 'NOT_LOGGED_IN',
+          });
+        }
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
   render() {
+    const { loggedInStatus } = this.state;
     return (
       <div className="app">
         <BrowserRouter>
@@ -72,7 +75,10 @@ export default class App extends Component {
                 exact
                 path="/skates"
                 render={(props) => (
-                  <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                  <Dashboard
+                    {...props} /* eslint-disable-line */
+                    loggedInStatus={loggedInStatus}
+                  />
                 )}
               />
               <Route exact path="/lifestyle">
@@ -89,10 +95,10 @@ export default class App extends Component {
                 path="/"
                 render={(props) => (
                   <HomeLogin
-                    {...props}
+                    {...props} /* eslint-disable-line */
                     handleLogin={this.handleLogin}
                     handleLogout={this.handleLogout}
-                    loggedInStatus={this.state.loggedInStatus}
+                    loggedInStatus={loggedInStatus}
                   />
                 )}
               />
@@ -101,14 +107,15 @@ export default class App extends Component {
                 path="/registration"
                 render={(props) => (
                   <HomeRegistration
-                    {...props}
+                    {...props} /* eslint-disable-line */
                     handleLogin={this.handleLogin}
                     handleLogout={this.handleLogout}
-                    loggedInStatus={this.state.loggedInStatus}
+                    loggedInStatus={loggedInStatus}
                   />
                 )}
               />
-              <Route exact path="/:skateboard_id" render={(props) => <Skate {...props} />} />
+              {/* eslint-disable-next-line */}
+              <Route exact path="/:skateboard_id" render={(props) => <Skate {...props} />} />{' '}
             </Switch>
           </div>
         </BrowserRouter>
@@ -117,4 +124,4 @@ export default class App extends Component {
   }
 }
 
-/* eslint-enable react/prefer-stateless-function, react/jsx-props-no-spreading */
+/* eslint-enable react/no-unused-state */

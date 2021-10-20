@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment, { duration } from 'moment';
+import PropTypes from 'prop-types';
 
 export default class Countdown extends Component {
   constructor(props) {
@@ -13,16 +14,19 @@ export default class Countdown extends Component {
     };
   }
 
-  addZeros(value) {
-    value = String(value);
-    while (value.length < 2) {
-      value = `0${value}`;
-    }
-    return value;
+  componentDidMount() {
+    this.setCountdown();
+    this.interval = setInterval(() => {
+      this.setCountdown();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   setCountdown() {
-    const futureDate = moment(this.props.futureDate);
+    const futureDate = moment(this.props.futureDate); /* eslint-disable-line */
 
     const today = moment();
 
@@ -41,15 +45,12 @@ export default class Countdown extends Component {
     });
   }
 
-  componentDidMount() {
-    this.setCountdown();
-    this.interval = setInterval(() => {
-      this.setCountdown();
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
+  addZeros(value) {
+    this.value = String(value);
+    while (value.length < 2) {
+      value = `0${value}`; /* eslint-disable-line */
+    }
+    return value;
   }
 
   render() {
@@ -57,6 +58,7 @@ export default class Countdown extends Component {
       <div className="countdown">
         {Object.keys(this.state).map((key) => (
           <div className="countdown-segment" key={key.toString()}>
+            {/* eslint-disable-next-line */}
             <span className="countdown-segment-number">{this.addZeros(this.state[key])}</span>
             <span className="countdown-segment-caption">{key.toUpperCase()}</span>
           </div>
@@ -65,3 +67,7 @@ export default class Countdown extends Component {
     );
   }
 }
+
+Countdown.propTypes = {
+  futureDate: PropTypes.number.isRequired,
+};

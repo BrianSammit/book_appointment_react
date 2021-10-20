@@ -31,6 +31,9 @@ $bg_gradient: linear-gradient(
       padding: 10px;
       cursor: pointer;
       z-index: 1;
+      background: none;
+      border: none;
+      font-size: 20px;
     }
 
     .nav-menu {

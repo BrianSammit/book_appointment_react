@@ -14,12 +14,12 @@ export default class Dashboard extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:3001/skateboards')
+      .get('https://skate-store-api.herokuapp.com//skateboards')
       .then((res) => {
         this.setState({ skates: res.data });
       })
       .catch((error) => {
-        console.log('error', error);
+        throw new Error(error);
       });
   }
 

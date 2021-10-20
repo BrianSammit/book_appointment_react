@@ -1,10 +1,12 @@
+/* eslint-disable camelcase, jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Skate = (props) => {
   const { match } = props;
-  const { params } = match;
+  const { params } = match; /* eslint-disable-line */
   const { skateboard_id } = params;
   const [skate, setSkate] = useState([]);
   const [user_id, setUser] = useState([]);
@@ -14,23 +16,23 @@ const Skate = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/skateboards/${skateboard_id}`)
+      .get(`https://skate-store-api.herokuapp.com//skateboards/${skateboard_id}`)
       .then((res) => {
         setSkate(res.data);
       })
       .catch((error) => {
-        console.log('error', error);
+        throw new Error(error);
       });
   }, [skateboard_id]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/logged_in', { withCredentials: true })
+      .get('https://skate-store-api.herokuapp.com//logged_in', { withCredentials: true })
       .then((res) => {
         setUser(res.data.user.id);
       })
       .catch((error) => {
-        console.log('error', error);
+        throw new Error(error);
       });
   }, [skateboard_id]);
 
@@ -38,7 +40,7 @@ const Skate = (props) => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:3001/appointments', {
+      .post('https://skate-store-api.herokuapp.com//appointments', {
         start_date,
         end_date,
         city,
@@ -46,10 +48,10 @@ const Skate = (props) => {
         user_id,
       })
       .then(() => {
-        console.log('new appointment created');
+        console.log('new appointment created'); /* eslint-disable-line */
       })
       .catch((error) => {
-        console.log('error', error);
+        throw new Error(error);
       });
   };
 
@@ -61,7 +63,7 @@ const Skate = (props) => {
         <div className="skate-item">
           <h1>{brand}</h1>
           <img className="ca-img" src={image} alt={brand} />
-          <button className="btn-div">
+          <button type="button" className="btn-div">
             <Link className="btn" to="/skates">
               Go back
             </Link>
@@ -111,3 +113,9 @@ const Skate = (props) => {
 };
 
 export default Skate;
+
+Skate.propTypes = {
+  match: PropTypes.any.isRequired /* eslint-disable-line */,
+};
+
+/* eslint-enable camelcase, jsx-a11y/label-has-associated-control */

@@ -1,5 +1,4 @@
-/* eslint-disable react/no-unused-state, class-methods-use-this, no-console,
-react/jsx-props-no-spreading */
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -20,10 +19,13 @@ export default class Registration extends Component {
   }
 
   handleSubmit(e) {
-    const { username, email, password, passwordConfirmation } = this.state;
+    const {
+      username, email, password, passwordConfirmation,
+    } = this.state;
+    const { handleSuccessfullAuth } = this.props;
     axios
       .post(
-        'http://localhost:3001/registrations',
+        'https://skate-store-api.herokuapp.com//registrations',
         {
           user: {
             username,
@@ -36,11 +38,13 @@ export default class Registration extends Component {
       )
       .then((response) => {
         if (response.data.status === 'created') {
-          this.props.handleSuccessfullAuth(response.data);
+          handleSuccessfullAuth(response.data);
         }
       })
       .catch((errors) => {
-        console.log('resgistration error', errors);
+        this.setState({
+          loginErrors: errors,
+        });
       });
     e.preventDefault();
   }
@@ -52,7 +56,9 @@ export default class Registration extends Component {
   }
 
   render() {
-    const { username, email, password, passwordConfirmation } = this.state;
+    const {
+      username, email, password, passwordConfirmation,
+    } = this.state;
     return (
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
@@ -152,5 +158,8 @@ export default class Registration extends Component {
   }
 }
 
-/* eslint-enable react/no-unused-state, class-methods-use-this, no-console,
-react/jsx-props-no-spreading */
+Registration.propTypes = {
+  handleSuccessfullAuth: PropTypes.any.isRequired /* eslint-disable-line */,
+};
+
+/* eslint-enable react/no-unused-state */

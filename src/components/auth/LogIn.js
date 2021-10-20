@@ -1,7 +1,7 @@
-/* eslint-disable react/no-unused-state, class-methods-use-this, no-console,
- react/jsx-props-no-spreading */
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class Login extends Component {
   constructor(props) {
@@ -20,9 +20,10 @@ export default class Login extends Component {
 
   handleSubmit(e) {
     const { username, email, password } = this.state;
+    const { handleSuccessfullAuth } = this.props;
     axios
       .post(
-        'http://localhost:3001/sessions',
+        'https://skate-store-api.herokuapp.com//sessions',
         {
           user: {
             username,
@@ -34,11 +35,13 @@ export default class Login extends Component {
       )
       .then((response) => {
         if (response.data.logged_in) {
-          this.props.handleSuccessfullAuth(response.data);
+          handleSuccessfullAuth(response.data);
         }
       })
       .catch((errors) => {
-        console.log('Login error', errors);
+        this.setState({
+          loginErrors: errors,
+        });
       });
     e.preventDefault();
   }
@@ -130,5 +133,8 @@ export default class Login extends Component {
   }
 }
 
-/* eslint-enable react/no-unused-state, class-methods-use-this, no-console,
-react/jsx-props-no-spreading */
+Login.propTypes = {
+  handleSuccessfullAuth: PropTypes.any.isRequired /* eslint-disable-line */,
+};
+
+/* eslint-enable react/no-unused-state */

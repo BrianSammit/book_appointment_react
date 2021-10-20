@@ -1,5 +1,5 @@
-/* eslint-disable react/prefer-stateless-function, react/jsx-props-no-spreading */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Login from './auth/LogIn';
 
 export default class HomeLogin extends Component {
@@ -10,8 +10,9 @@ export default class HomeLogin extends Component {
   }
 
   handleSuccessfullAuth(data) {
-    this.props.handleLogin(data);
-    this.props.history.push('/skates');
+    const { handleLogin, history } = this.props;
+    handleLogin(data);
+    history.push('/skates'); /* eslint-disable-line */
   }
 
   render() {
@@ -23,4 +24,7 @@ export default class HomeLogin extends Component {
   }
 }
 
-/* eslint-enable react/prefer-stateless-function, react/jsx-props-no-spreading */
+HomeLogin.propTypes = {
+  handleLogin: PropTypes.any.isRequired /* eslint-disable-line */,
+  history: PropTypes.any.isRequired /* eslint-disable-line */,
+};
