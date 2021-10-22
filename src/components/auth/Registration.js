@@ -26,7 +26,7 @@ export default class Registration extends Component {
     const { handleSuccessfullAuth } = this.props;
     axios
       .post(
-        'https://skate-store-api.herokuapp.com//registrations',
+        'https://skate-store-api.herokuapp.com/registrations',
         {
           user: {
             username,
