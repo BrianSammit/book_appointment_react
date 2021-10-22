@@ -23,7 +23,7 @@ export default class Login extends Component {
     const { handleSuccessfullAuth } = this.props;
     axios
       .post(
-        'http://localhost:3000/sessions',
+        'https://skate-store-api.herokuapp.com/sessions',
         {
           user: {
             username,
