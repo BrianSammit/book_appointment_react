@@ -16,8 +16,6 @@ LETS SKATE SHOP is an app where you can schedule an skate to test it, created it
 - HTML
 - CSS
 - React
-- Redux
-- Material-UI
 - Package.json
 - Jest
 - Axios
