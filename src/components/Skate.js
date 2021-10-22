@@ -16,7 +16,7 @@ const Skate = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://skate-store-api.herokuapp.com//skateboards/${skateboard_id}`)
+      .get(`http://localhost:3000/skateboards/${skateboard_id}`)
       .then((res) => {
         setSkate(res.data);
       })
