@@ -1,14 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import { BrowserRouter } from "react-router-dom";
-import App from "./components/app";
-import reducers from "./reducers";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/app';
+import reducers from './reducers';
+
+import './assets/style/main.scss';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
-
-import "./style/main.scss";
 
 function main() {
   ReactDOM.render(
@@ -17,8 +17,8 @@ function main() {
         <App />
       </BrowserRouter>
     </Provider>,
-    document.querySelector(".app-wrapper")
+    document.querySelector('.app-wrapper'),
   );
 }
 
-document.addEventListener("DOMContentLoaded", main);
+document.addEventListener('DOMContentLoaded', main);

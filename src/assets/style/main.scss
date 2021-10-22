@@ -1,0 +1,717 @@
+/* stylelint-disable no-descending-specificity */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+$bg_body: #303236;
+$bg_gradient_last_color: rgba(151, 191, 16, 1);
+$bg_gradient: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 1) 0%,
+  rgba(48, 50, 54, 1) 37%,
+  $bg_gradient_last_color 94%
+);
+
+.app {
+  display: flex;
+
+  .navbar {
+    width: fit-content;
+
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      background: none;
+      border: none;
+      font-size: 20px;
+    }
+
+    .nav-menu {
+      background-color: #97bf10;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: -500px;
+      transition: all 0.5s ease;
+
+      .logo,
+      .nav-link {
+        width: 130px;
+        height: 90px;
+      }
+    }
+
+    .nav-menu-active {
+      width: fit-content;
+      height: 95vh;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.5s ease;
+
+      .logo,
+      .nav-link {
+        width: 130px;
+        height: 90px;
+      }
+
+      .nav-link-active {
+        color: #303236;
+      }
+
+      .links {
+        margin-top: 40px;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        margin-right: -24px;
+        list-style-type: none;
+
+        li {
+          margin-top: 5px;
+          padding: 3px;
+          width: 120px;
+
+          a {
+            text-decoration: none;
+            color: #303236;
+          }
+        }
+
+        li:active,
+        li:hover {
+          width: 120px;
+          padding: 4px;
+          background: #97bf10;
+          border-radius: 4px;
+          transition: all 0.2s ease-in-out;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+
+      .nav-btn {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 130px;
+
+        .nav-btn-links {
+          display: flex;
+          justify-content: center;
+          margin-top: 5px;
+          border-radius: 4px;
+          background: #97bf10;
+          padding: 10px 22px;
+          color: #fff;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          text-decoration: none;
+        }
+
+        .nav-btn-link {
+          text-decoration: none;
+          color: #fff;
+        }
+
+        .nav-btn-links:hover,
+        .nav-btn-links:active {
+          transition: all 0.2s ease-in-out;
+          background: #fff;
+          color: #303236;
+        }
+
+        .nav-btn-link:hover,
+        .nav-btn-link:active {
+          color: #303236;
+        }
+      }
+
+      .nav-icons {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: #303236;
+        list-style-type: none;
+
+        .nav-icons-li {
+          .nav-icons-link {
+            text-decoration: none;
+            color: #303236;
+          }
+        }
+      }
+
+      .copy {
+        display: flex;
+        text-align: center;
+        margin-top: 10px;
+        width: 120px;
+        font-size: 8px;
+        color: #303236;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .home-login {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #97bf10;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1632886628/Skate%20brands/back-1_cp0cdv.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+    }
+
+    .home-registration {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #97bf10;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1632888896/Skate%20brands/back-2_s7eb2b.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+    }
+
+    .lifestyle-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #59595c;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633030848/Skate%20brands/back-4_cvrkws.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+
+      .lifestyle-square {
+        width: 70%;
+        height: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        .lifestyle-div-1 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032958/Skate%20brands/back-life-1_ycwo4o.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-2 {
+          background-color: #99c110;
+        }
+
+        .lifestyle-div-3 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032959/Skate%20brands/back-life-2_vdawje.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-4 {
+          background-color: #ffc600;
+        }
+
+        .lifestyle-div-5 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032958/Skate%20brands/back-life-5_f6nsc8.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-6 {
+          background-color: #252525;
+        }
+
+        .lifestyle-div-7 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032959/Skate%20brands/back-life-3_sysepw.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .lifestyle-div-8 {
+          background-color: #10bbb5;
+        }
+
+        .lifestyle-div-9 {
+          background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633032958/Skate%20brands/back-life-4_kt287e.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .div-color {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          h5 {
+            color: #fff;
+            width: fit-content;
+          }
+
+          .fa-angle-right {
+            margin-top: 15px;
+            padding: 5px 8px;
+            border: solid 2px #fff;
+            border-radius: 50%;
+            color: #fff;
+            width: fit-content;
+          }
+        }
+      }
+    }
+
+    .shop-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #a8a8af;
+      background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633037405/Skate%20brands/back-5_r8xmh6.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+
+      .shop-square {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633057466/Skate%20brands/back-count_vqslxt.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 70%;
+        height: 70%;
+
+        .countdown {
+          width: 70%;
+          display: flex;
+          justify-content: space-evenly;
+
+          .countdown-segment {
+            display: flex;
+            flex-direction: column;
+
+            .countdown-segment-number {
+              font-size: 25px;
+              color: #fff;
+            }
+
+            .countdown-segment-caption {
+              margin-top: 10px;
+              color: #99c110;
+            }
+          }
+        }
+
+        .comming {
+          margin-top: 40px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .form {
+    width: 300px;
+    padding: 64px 15px 24px;
+    margin: 0 auto;
+
+    .control {
+      margin: 0 0 24px;
+
+      input {
+        width: 100%;
+        padding: 14px 16px;
+        border: 0;
+        background: transparent;
+        color: #fff;
+        font-family: monospace, serif;
+        letter-spacing: 0.05em;
+        font-size: 16px;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border: 0;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      display: block;
+      padding: 14px 16px;
+      background: transparent;
+      outline: none;
+      border: 0;
+      color: #fff;
+      letter-spacing: 0.1em;
+      font-weight: bold;
+      font-family: monospace;
+      font-size: 16px;
+    }
+  }
+
+  .block-cube {
+    position: relative;
+
+    .bg-inner {
+      background: $bg_body;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+    }
+
+    .bg-top {
+      position: absolute;
+      height: 10px;
+      background: rgb(2, 0, 36);
+      background: $bg_gradient;
+      bottom: 100%;
+      left: 5px;
+      right: -5px;
+      transform: skew(-45deg, 0);
+      margin: 0;
+
+      .bg-inner {
+        bottom: 0;
+      }
+    }
+
+    .bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(2, 0, 36);
+      background: $bg_gradient;
+    }
+
+    .bg-right {
+      position: absolute;
+      background: rgb(2, 0, 36);
+      background: rgba(151, 191, 16, 1);
+      top: -5px;
+      z-index: 0;
+      bottom: 5px;
+      width: 10px;
+      left: 100%;
+      transform: skew(0, -45deg);
+
+      .bg-inner {
+        left: 0;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .text {
+      position: relative;
+      z-index: 2;
+    }
+
+    &.block-input {
+      input {
+        position: relative;
+        z-index: 2;
+
+        &:focus ~ .bg-right .bg-inner,
+        &:focus ~ .bg-top .bg-inner,
+        &:focus ~ .bg-inner .bg-inner {
+          top: 100%;
+          background: transparent;
+        }
+      }
+
+      .bg-top,
+      .bg-right,
+      .bg {
+        background: rgba(255, 255, 255, 0.4);
+        transition: background 0.2s ease-in-out;
+      }
+
+      .bg-right,
+      .bg-top {
+        .bg-inner {
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      &:focus,
+      &:hover {
+        .bg-top,
+        .bg-right,
+        .bg {
+          background: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+
+    &.block-cube-hover:focus,
+    &.block-cube-hover:hover {
+      .bg {
+        .bg-inner {
+          top: 100%;
+        }
+      }
+    }
+  }
+
+  .div-carousel {
+    width: 100%;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    h1 {
+      font-weight: bold;
+    }
+
+    p {
+      color: rgba(119, 119, 119, 0.5);
+      font-size: 12px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+      width: 100%;
+      margin: 0 15px;
+      font-size: 1em;
+
+      h3 {
+        color: black;
+        padding: 10px;
+        border-bottom: 1px solid rgba(119, 119, 119, 0.5);
+      }
+
+      .ca-img {
+        width: 100%;
+      }
+
+      .ca-icons {
+        width: 70%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style-type: none;
+
+        .ca-icons-li {
+          .ca-icons-link {
+            text-decoration: none;
+            color: rgba(119, 119, 119, 0.5);
+            border: 1px solid rgba(119, 119, 119, 0.5);
+            border-radius: 50%;
+            padding: 10px 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .skate-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .ca-img {
+      width: 100%;
+    }
+
+    .btn-div {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      border-radius: 4px;
+      background: #97bf10;
+      padding: 10px 22px;
+      color: #fff;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn-div:hover,
+    .btn-div:active {
+      transition: all 0.2s ease-in-out;
+      background: #fff;
+      color: #303236;
+    }
+
+    .btn:hover,
+    .btn:active {
+      color: #303236;
+    }
+  }
+
+  .div-appo {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8af;
+    background-image: url(https://res.cloudinary.com/ddjesec95/image/upload/v1633717371/Skate%20brands/back-6_m85ud6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+
+    table {
+      background-color: #252525;
+
+      th,
+      td {
+        color: #fff;
+        border: solid 1px rgb(255, 255, 255);
+        padding: 10px;
+      }
+
+      th {
+        font-size: 20px;
+      }
+
+      td {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .skate_form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .div-test-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: solid 1px rgba(119, 119, 119, 0.5);
+      padding: 10px;
+
+      h2 {
+        color: #97bf10;
+      }
+
+      .test_form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        .btn-div {
+          display: flex;
+          justify-content: center;
+          margin-top: 5px;
+          border-radius: 4px;
+          background: #97bf10;
+          padding: 10px 22px;
+          color: #fff;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          text-decoration: none;
+        }
+
+        .btn {
+          text-decoration: none;
+          color: #fff;
+        }
+
+        .btn-div:hover,
+        .btn-div:active {
+          transition: all 0.2s ease-in-out;
+          background: #fff;
+          color: #303236;
+        }
+
+        .btn:hover,
+        .btn:active {
+          color: #303236;
+        }
+
+        .label-input {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          input {
+            padding: 5px;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* stylelint-enable no-descending-specificity */
