@@ -1,21 +1,19 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
+const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
 const webpackCommon = require('./common.config');
 
 const env = require('../env');
 const proxyRules = require('../proxy/rules');
 
 // webpack plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
 
 module.exports = webpackMerge(webpackCommon, {
-
   devtool: 'inline-source-map',
   mode: 'development',
   output: {
-  
     path: path.resolve(__dirname, '../static/dist'),
 
     filename: '[name].js',
@@ -24,51 +22,52 @@ module.exports = webpackMerge(webpackCommon, {
 
     chunkFilename: '[id]-chunk.js',
 
-    publicPath: '/'
-
+    publicPath: '/',
   },
 
   module: {
-
     rules: [
       {
         test: /\.s?css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2
-            }
+              importLoaders: 2,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
               outputStyle: 'expanded',
               sourceMap: true,
-              sourceMapContents: true
-            }
-          }
-        ]
-      }
-    ]
-
+              sourceMapContents: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+      },
+    ],
   },
 
   plugins: [
     new DefinePlugin({
       'process.env': {
-        NODE_ENV: "'development'"
-      }
+        NODE_ENV: "'development'",
+      },
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, '../static/index.html'),
-      favicon: path.resolve(__dirname, '../static/favicon.ico')
+      favicon: path.resolve(__dirname, '../static/favicon.ico'),
     }),
-    new HotModuleReplacementPlugin()
+    new HotModuleReplacementPlugin(),
   ],
 
   devServer: {
@@ -79,16 +78,19 @@ module.exports = webpackMerge(webpackCommon, {
     compress: true,
     hot: true,
     historyApiFallback: {
-      disableDotRule: true
+      disableDotRule: true,
     },
     watchOptions: {
-      ignored: /node_modules/
+      ignored: /node_modules/,
     },
     overlay: {
       warnings: true,
-      errors: true
+      errors: true,
     },
-    proxy: proxyRules
-  }
+    proxy: proxyRules,
+  },
 
+  node: {
+    fs: 'empty',
+  },
 });

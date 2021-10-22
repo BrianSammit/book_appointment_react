@@ -22,6 +22,11 @@ module.exports = {
       },
 
       {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+      },
+
+      {
         type: 'javascript/auto',
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader',
