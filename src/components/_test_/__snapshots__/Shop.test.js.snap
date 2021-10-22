@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creates a component renders correctly 1`] = `
+<div
+  className="shop-container"
+>
+  <div
+    className="shop-square"
+  >
+    <div
+      className="countdown"
+    >
+      <div
+        className="countdown-segment"
+      >
+        <span
+          className="countdown-segment-number"
+        >
+          435
+        </span>
+        <span
+          className="countdown-segment-caption"
+        >
+          DAYS
+        </span>
+      </div>
+      <div
+        className="countdown-segment"
+      >
+        <span
+          className="countdown-segment-number"
+        >
+          2
+        </span>
+        <span
+          className="countdown-segment-caption"
+        >
+          HOURS
+        </span>
+      </div>
+      <div
+        className="countdown-segment"
+      >
+        <span
+          className="countdown-segment-number"
+        >
+          22
+        </span>
+        <span
+          className="countdown-segment-caption"
+        >
+          MIN
+        </span>
+      </div>
+      <div
+        className="countdown-segment"
+      >
+        <span
+          className="countdown-segment-number"
+        >
+          20
+        </span>
+        <span
+          className="countdown-segment-caption"
+        >
+          SEC
+        </span>
+      </div>
+    </div>
+    <h2
+      className="comming"
+    >
+       COMMING SOON !!
+    </h2>
+  </div>
+</div>
+`;

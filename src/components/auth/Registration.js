@@ -147,7 +147,7 @@ export default class Registration extends Component {
             <div className="bg">
               <div className="bg-inner" />
             </div>
-            <div className="text">Log In</div>
+            <div className="text">Register</div>
           </button>
         </form>
       </div>

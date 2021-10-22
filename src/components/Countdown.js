@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import moment, { duration } from 'moment';
-import PropTypes from 'prop-types';
 
 export default class Countdown extends Component {
   constructor(props) {
@@ -67,7 +66,3 @@ export default class Countdown extends Component {
     );
   }
 }
-
-Countdown.propTypes = {
-  futureDate: PropTypes.number.isRequired,
-};
