@@ -56,10 +56,6 @@ const Skate = (props) => {
       });
   };
 
-  const clear = () => {
-    document.getElementById('form').reset();
-  };
-
   const generateSkateJSX = () => {
     const { brand, image } = skate;
 
@@ -76,7 +72,7 @@ const Skate = (props) => {
         </div>
         <div className="div-test-form">
           <h2>Wanna try it out</h2>
-          <form id="form" className="test_form" onSubmit={handleSubmit} onClick={clear}>
+          <form id="form" className="test_form" onSubmit={handleSubmit}>
             <div className="label-input">
               <label>City</label>
               <input
