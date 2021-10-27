@@ -45,7 +45,7 @@ export default class App extends Component {
   checkLoginStatus() {
     const { loggedInStatus } = this.state;
     axios
-      .get('https://skate-store-api.herokuapp.com/logged_in', { withCredentials: true })
+      .get('http://localhost:3001/logged_in', { withCredentials: true })
 
       .then((response) => {
         if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {

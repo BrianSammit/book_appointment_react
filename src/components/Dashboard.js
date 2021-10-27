@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
 
   componentDidMount() {
     axios
-      .get('https://skate-store-api.herokuapp.com/skateboards')
+      .get('http://localhost:3001/skateboards')
 
       .then((res) => {
         this.setState({ skates: res.data });
