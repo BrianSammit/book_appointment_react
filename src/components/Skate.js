@@ -49,7 +49,7 @@ const Skate = (props) => {
         user_id,
       })
       .then(() => {
-        NotificationManager.success('Success message', 'Title here');
+        NotificationManager.success('Success message', 'Appoitment created');
       })
       .catch((error) => {
         throw new Error(error);
@@ -76,7 +76,7 @@ const Skate = (props) => {
         </div>
         <div className="div-test-form">
           <h2>Wanna try it out</h2>
-          <form id="form" className="test_form" onSubmit={handleSubmit} onSubmit={clear}>
+          <form id="form" className="test_form" onSubmit={handleSubmit} onClick={clear}>
             <div className="label-input">
               <label>City</label>
               <input
@@ -110,6 +110,7 @@ const Skate = (props) => {
             </button>
           </form>
         </div>
+        <NotificationContainer />
       </div>
     );
   };
