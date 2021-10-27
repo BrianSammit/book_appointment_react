@@ -42,7 +42,7 @@ export default class Navbar extends Component {
         if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
           this.setState({
             loggedInStatus: 'LOGGED_IN',
-            user: response.data.user,
+            user: response.data.user /* eslint-disable-line */,
           });
         } else if (!response.data.logged_in && loggedInStatus === 'LOGGED_IN') {
           this.setState({

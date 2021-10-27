@@ -20,7 +20,9 @@ export default class Registration extends Component {
   }
 
   handleSubmit(e) {
-    const { username, email, password, passwordConfirmation } = this.state;
+    const {
+      username, email, password, passwordConfirmation,
+    } = this.state;
     const { handleSuccessfullAuth } = this.props;
     axios
       .post(
@@ -55,7 +57,9 @@ export default class Registration extends Component {
   }
 
   render() {
-    const { username, email, password, passwordConfirmation } = this.state;
+    const {
+      username, email, password, passwordConfirmation,
+    } = this.state;
     return (
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
