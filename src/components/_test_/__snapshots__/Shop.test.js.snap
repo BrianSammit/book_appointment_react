@@ -30,7 +30,7 @@ exports[`Creates a component renders correctly 1`] = `
         <span
           className="countdown-segment-number"
         >
-          16
+          13
         </span>
         <span
           className="countdown-segment-caption"
@@ -44,7 +44,7 @@ exports[`Creates a component renders correctly 1`] = `
         <span
           className="countdown-segment-number"
         >
-          0
+          57
         </span>
         <span
           className="countdown-segment-caption"
@@ -58,7 +58,7 @@ exports[`Creates a component renders correctly 1`] = `
         <span
           className="countdown-segment-number"
         >
-          28
+          37
         </span>
         <span
           className="countdown-segment-caption"
