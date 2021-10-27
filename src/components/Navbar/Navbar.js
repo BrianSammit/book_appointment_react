@@ -27,7 +27,7 @@ export default class Navbar extends Component {
   handleLogoutClick() {
     const { handleLogout } = this.props; /* eslint-disable-line */
     axios
-      .delete('http://localhost:3001/logout', { withCredentials: true })
+      .delete('https://skate-store-api.herokuapp.com/logout', { withCredentials: true })
       .then(() => handleLogout())
       .catch((error) => {
         throw new Error(error);
@@ -37,7 +37,7 @@ export default class Navbar extends Component {
   checkLoginStatus() {
     const { loggedInStatus } = this.state;
     axios
-      .get('http://localhost:3001/logged_in', { withCredentials: true })
+      .get('https://skate-store-api.herokuapp.com/logged_in', { withCredentials: true })
       .then((response) => {
         if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
           this.setState({

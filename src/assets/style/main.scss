@@ -720,7 +720,7 @@ $bg_gradient: linear-gradient(
     right: 0;
     z-index: 999999;
     width: 320px;
-    padding: 0px 15px;
+    padding: 0 15px;
     max-height: calc(100% - 30px);
     overflow-x: hidden;
     overflow-y: auto;
@@ -775,7 +775,7 @@ $bg_gradient: linear-gradient(
     transition: all 0.4s;
   }
 
-  .notification:before {
+  .notification::before {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -793,7 +793,7 @@ $bg_gradient: linear-gradient(
     background-color: #2f96b4;
   }
 
-  .notification-info:before {
+  .notification-info::before {
     content: '';
   }
 
@@ -801,7 +801,7 @@ $bg_gradient: linear-gradient(
     background-color: #51a351;
   }
 
-  .notification-success:before {
+  .notification-success::before {
     content: '';
   }
 
@@ -809,7 +809,7 @@ $bg_gradient: linear-gradient(
     background-color: #f89406;
   }
 
-  .notification-warning:before {
+  .notification-warning::before {
     content: '';
   }
 
@@ -817,7 +817,7 @@ $bg_gradient: linear-gradient(
     background-color: #bd362f;
   }
 
-  .notification-error:before {
+  .notification-error::before {
     content: '';
   }
 }
