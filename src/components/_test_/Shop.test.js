@@ -10,17 +10,6 @@ import { render, screen } from '@testing-library/react';
 import Shop from '../Shop';
 
 describe('Creates a component', () => {
-  it('renders correctly', () => {
-    const tree = renderer
-      .create(
-        <Router>
-          <Shop />
-        </Router>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('Renders a component', () => {
     render(
       <Router>
