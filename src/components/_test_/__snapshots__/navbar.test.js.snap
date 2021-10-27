@@ -91,6 +91,18 @@ exports[`Creates a component renders correctly 1`] = `
             REGISTER
           </a>
         </button>
+        <button
+          className="nav-btn-links"
+          type="button"
+        >
+          <a
+            className="nav-btn-link"
+            href="/"
+            onClick={[Function]}
+          >
+            LOGOUT
+          </a>
+        </button>
       </div>
     </div>
     <ul

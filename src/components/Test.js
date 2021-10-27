@@ -12,7 +12,7 @@ export default class Test extends Component {
 
   componentDidMount() {
     axios
-      .get('https://skate-store-api.herokuapp.com//appointments')
+      .get('http://localhost:3001//appointments')
       .then((res) => {
         this.setState({ appointements: res.data });
       })

@@ -16,7 +16,7 @@ const Skate = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://skate-store-api.herokuapp.com//skateboards/${skateboard_id}`)
+      .get(`http://localhost:3001//skateboards/${skateboard_id}`)
       .then((res) => {
         setSkate(res.data);
       })
@@ -27,7 +27,7 @@ const Skate = (props) => {
 
   useEffect(() => {
     axios
-      .get('https://skate-store-api.herokuapp.com//logged_in', { withCredentials: true })
+      .get('http://localhost:3001//logged_in', { withCredentials: true })
       .then((res) => {
         setUser(res.data.user.id);
       })
@@ -40,7 +40,7 @@ const Skate = (props) => {
     e.preventDefault();
 
     axios
-      .post('https://skate-store-api.herokuapp.com//appointments', {
+      .post('http://localhost:3001//appointments', {
         start_date,
         end_date,
         city,
