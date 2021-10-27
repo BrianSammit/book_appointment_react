@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 const Skate = (props) => {
   const { match } = props;
@@ -48,11 +49,15 @@ const Skate = (props) => {
         user_id,
       })
       .then(() => {
-        console.log('new appointment created'); /* eslint-disable-line */
+        NotificationManager.success('Success message', 'Title here');
       })
       .catch((error) => {
         throw new Error(error);
       });
+  };
+
+  const clear = () => {
+    document.getElementById('form').reset();
   };
 
   const generateSkateJSX = () => {
@@ -71,7 +76,7 @@ const Skate = (props) => {
         </div>
         <div className="div-test-form">
           <h2>Wanna try it out</h2>
-          <form className="test_form" onSubmit={handleSubmit}>
+          <form id="form" className="test_form" onSubmit={handleSubmit} onSubmit={clear}>
             <div className="label-input">
               <label>City</label>
               <input
