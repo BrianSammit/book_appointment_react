@@ -29,7 +29,6 @@ LETS SKATE SHOP is an app where you can schedule an skate to test it, created it
 - Run `npm start`.
 - Open your browser and copy paste http://localhost:3000.
 
-
 ## Author
 
 👤 **Brian Cruz**
