@@ -1,6 +1,6 @@
 # LETS SKATE SHOP
 
-LETS SKATE SHOP is an app where you can schedule an skate to test it, created it in React, this single-page application uses an API build it in Ruby on Rails, here is the [Back-end repository](https://github.com/BrianSammit/book_appointment_api).
+LETS SKATE SHOP is an app where you can schedule a skate to test it, created it in React, this single-page application uses an API build it in Ruby on Rails, here is the [Back-end repository](https://github.com/BrianSammit/book_appointment_api).
 
 ## Screenshot
 
